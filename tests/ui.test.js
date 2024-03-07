@@ -1,6 +1,8 @@
 const { expect, test } = require('@playwright/test');
 
 const baseURL = "http://localhost:3000"
+const user = 'peter@abv.bg'
+const password = '123456'
 
 test("Verify All Books link is visible", async ( {page} ) => {
     await page.goto(baseURL);
@@ -30,8 +32,8 @@ test("Verify All Books link is visible after user is logged in", async ( {page} 
     await page.goto(baseURL);
     await page.waitForSelector("nav.navbar");
     await page.click('a[href="/login"]');
-    await page.fill('#email', "peter@abv.bg");
-    await page.fill('#password', "123456");
+    await page.fill('#email', user);
+    await page.fill('#password', password);
     await page.click('#login-form > fieldset > input');
 
     // Check if Logout button is visible
