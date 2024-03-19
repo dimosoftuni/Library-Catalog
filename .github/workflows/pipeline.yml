@@ -18,8 +18,6 @@ jobs:
       with:
         node-version: 20.x
         cache: 'npm'
-    - name: Navigate to package.json folder
-      run: cd \client
     - name: Install package.json dependencies
       run: npm install
     - name: Start BackEnd
